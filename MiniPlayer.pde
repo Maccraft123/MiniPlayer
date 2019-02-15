@@ -21,9 +21,8 @@ File filetoplay;             //                                 DONE
  
 int i = 100, overButton, directory, x, y, activeTab = 1, tmp;
 int[] keysPressed;
-String dir;
-String line = "/home/maccraft123/Music/";
-//String line = "";
+String dir = "/home/maccraft123/Music/";
+//String dir = "";
 File prevFile;
 int filesCount = 100;
 String nowPlay;
@@ -40,7 +39,7 @@ void setup()
   size(500,200);
  
   font = createFont("arial", 10);
-  files = listFiles(line);
+  files = listFiles(dir);
   filesCount=files.length;
   
   minim = new Minim(this);
