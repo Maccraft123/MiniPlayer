@@ -32,13 +32,7 @@ void reDraw()
     .setHeight(24)
      .setWidth(50)
       .setFont(font);
-     
-  BPstop = new Button(gui, "Stop")
-   .setPosition(150, 16)
-    .setHeight(24)
-     .setWidth(47)
-      .setFont(font);
-     
+          
   BMexit = new Button(gui, "EXIT")
    .setPosition(450, 0)
     .setHeight(24)

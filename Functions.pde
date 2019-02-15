@@ -25,7 +25,18 @@ void Back()
 
 void Play()
 {
-  player.play();
+  if (isPlaying)
+  {  
+    player.pause();
+    BPcont.setLabel("Play");
+    isPlaying = false;
+  }
+  else
+  {
+    BPcont.setLabel("Stop");
+    player.play();
+    isPlaying = true;
+  }
 }
  
 void Stop()

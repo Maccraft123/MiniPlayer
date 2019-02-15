@@ -8,7 +8,6 @@ Serial port;
 Minim minim;
 Button BPnext;               //Button for Next File
 Button BBack;                //           Previous File
-Button BPstop;               //           Stop Playing          DONE
 Button BPcont;               //           Continue Playing      DONE
 Button BMexit;               //           Exit                  DONE
 Button BAactive;             //           Is Serial port?       WIP
@@ -30,6 +29,7 @@ PFont font;
 boolean isPi = false;
 boolean isSerial = false;
 boolean isPhone = false;
+boolean isPlaying = true;
 PrintWriter output;
 BufferedReader reader;
  
@@ -60,6 +60,7 @@ void setup()
   player = minim.loadFile(filetoplay.getAbsolutePath());
   player.play();
   textFont(font);
+  BPcont.setLabel("Stop");
 }
  
 void draw()
