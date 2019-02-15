@@ -15,19 +15,6 @@ void NextFile(int a)
   isPlaying = true;
 }
 
-void Folder(File select)
-{
-  if (select == null) return;
-  dir = select.getAbsolutePath();
-  PrintWriter output;
-  output = createWriter("settings.conf");
-  output.println("config");
-  output.println(dir);
-  output.flush();
-  output.close();
-  selected = true;
-}
-
 void Next()
 {
   NextFile(0);
