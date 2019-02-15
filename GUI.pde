@@ -2,7 +2,7 @@ void reDraw()
 {
   background(0);
  
-/*  gui.getTab("default")
+  gui.getTab("default")
    .activateEvent(true)
     .setLabel("Player")
      .setId(1);
@@ -13,22 +13,22 @@ void reDraw()
    
   gui.getTab("Options")
    .activateEvent(true)
-    .setId(3);*/
+    .setId(3);
    
   BPnext = new Button(gui, "Back")
-   .setPosition(0, 0)
+   .setPosition(0, 16)
     .setHeight(24)
      .setWidth(50)
       .setFont(font);
       
   BPnext = new Button(gui, "Next")
-   .setPosition(50, 0)
+   .setPosition(50, 16)
     .setHeight(24)
      .setWidth(50)
       .setFont(font);
      
   BPcont = new Button(gui, "Play")
-   .setPosition (100,0)
+   .setPosition (100,16)
     .setHeight(24)
      .setWidth(50)
       .setFont(font);
@@ -43,15 +43,15 @@ void reDraw()
    .setPosition(150, 50)
     .setLabel("Serial Port Enabled?")
      .moveTo("Arduino")
-      .setFont(font);
-     
-  BFgetFolder = new Button(gui, "Directory")
-   .setPosition(0, 16)
-     .moveTo("Options")
       .setFont(font);*/
      
+  BFgetFolder = new Button(gui, "Directory")
+   .setPosition(150, 50)
+     .moveTo("Options")
+      .setFont(font);
+     
   BVisu = new Button(gui, "LowCPUMode")
-   .setPosition(147, 0)
+   .setPosition(147, 16)
     .setHeight(24)
      .setWidth(100)
       .moveTo("default")

@@ -21,7 +21,7 @@ File filetoplay;             //                                 DONE
 int i = 100, overButton, directory, x, y, activeTab = 1, tmp;
 int[] keysPressed;
 String dir = "/home/maccraft123/Music/";
-String[] settings;
+//String dir = "";
 File prevFile;
 int filesCount = 100;
 String nowPlay;
@@ -30,7 +30,6 @@ boolean isPi = false;
 boolean isSerial = false;
 boolean isPhone = false;
 boolean isPlaying = true;
-boolean selected = false;
 PrintWriter output;
 BufferedReader reader;
  
@@ -40,7 +39,10 @@ void setup()
   size(500,200);
  
   font = createFont("arial", 10);
+  files = listFiles(dir);
+  filesCount=files.length;
   
+  minim = new Minim(this);
   try
   {
    port = new Serial(this, Serial.list()[1], 9600);
@@ -50,36 +52,17 @@ void setup()
   {
     isSerial = false;
   }
-
-  try
-  {
-    BufferedReader reader = createReader("settings.conf");
-    if (reader.readLine().equals("config"))
-      dir = reader.readLine();
-  }
-  catch (Exception e)
-  {
-    selectFolder("Please select folder with music", "Folder");
-  }
-
-  while (!selected) delay(1000);
-  minim = new Minim(this);
+  
   gui = new ControlP5(this);
-  init();
   reDraw();
-}
-
-void init()
-{
-  files = listFiles(dir);
-  filesCount=files.length;
   filetoplay = files[int(random(0, filesCount))];
   println("PLAYING: ", filetoplay.getName());
   player = minim.loadFile(filetoplay.getAbsolutePath());
   player.play();
   textFont(font);
+  BPcont.setLabel("Stop");
 }
-
+ 
 void draw()
 {
   background(0);
