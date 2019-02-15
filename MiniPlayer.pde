@@ -2,11 +2,12 @@ import processing.serial.*;
 //import processing.sound.*;
 import ddf.minim.*;
 import controlP5.*;
- 
+
 ControlP5 gui;
 Serial port;
 Minim minim;
 Button BPnext;               //Button for Next File
+Button BBack;                //           Previous File
 Button BPstop;               //           Stop Playing          DONE
 Button BPcont;               //           Continue Playing      DONE
 Button BMexit;               //           Exit                  DONE
@@ -22,6 +23,9 @@ int i = 100, overButton, directory, x, y, activeTab = 1;
 int[] keysPressed;
 String dir;
 String line = "/home/maccraft123/Music/";
+//String line = "";
+File prevFile;
+int filesCount = 29;
 String nowPlay;
 PFont font;
 boolean isPi = false;
@@ -50,7 +54,7 @@ void setup()
   }
   gui = new ControlP5(this);
   reDraw();
-  filetoplay = files[int(random(0, 29))]; //Replase 51 with .mp3 count
+  filetoplay = files[int(random(0, filesCount))];
   println("PLAYING: ", filetoplay.getName());
   player = minim.loadFile(filetoplay.getAbsolutePath());
   player.play();
@@ -70,7 +74,7 @@ void draw()
       line( x1, 100 + player.left.get(i)*50, x2, 100 + player.left.get(i+1)*50 );
     }
   }
-  if (player.position()+10 == player.length())
+  if (player.position()+10 >= player.length())
    Next();
  
   Sleng.setValue(map(player.position(), 0, player.length(), 1, 100));

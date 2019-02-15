@@ -15,20 +15,26 @@ void reDraw()
    .activateEvent(true)
     .setId(3);
    
-  BPnext = new Button(gui, "Next")
+  BPnext = new Button(gui, "Back")
    .setPosition(0, 16)
+    .setHeight(24)
+     .setWidth(50)
+      .setFont(font);
+      
+  BPnext = new Button(gui, "Next")
+   .setPosition(50, 16)
     .setHeight(24)
      .setWidth(50)
       .setFont(font);
      
   BPcont = new Button(gui, "Play")
-   .setPosition (50,16)
+   .setPosition (100,16)
     .setHeight(24)
      .setWidth(50)
       .setFont(font);
      
   BPstop = new Button(gui, "Stop")
-   .setPosition(100, 16)
+   .setPosition(150, 16)
     .setHeight(24)
      .setWidth(47)
       .setFont(font);
