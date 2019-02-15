@@ -1,7 +1,6 @@
 # MiniPlayer
-Minim-based music player, beta stage.
-Low CPU usage, high RAM usage.
-Don't expect too much.
+Minim-based music player, beta stage
+Low CPU usage, high RAM usage
 
 # Depedencies
 * Minim
@@ -14,7 +13,7 @@ Don't expect too much.
 * 2. Open all files from Processing 3 GUI
 
 # Current state:
-* 50% functions of normal audio players aren't here
+* Basic functions of normal audio players are here
 * Commits are welcome
 
 # TODO:
