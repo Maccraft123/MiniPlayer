@@ -1,5 +1,6 @@
 # MiniPlayer
-Minim-based music player, beta stage. Low CPU usage
+Minim-based music player, beta stage.
+Low CPU usage, high RAM usage.
 Don't expect too much.
 
-WILL EAT YOUR CAT IF NOT HANDLED PROPERLY
+WILL EAT YOUR CAT
