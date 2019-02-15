@@ -19,13 +19,13 @@ AudioPlayer player;          //                                 DONE
 File[] files;                //                                 WIP(Counting WIP, other DONE)
 File filetoplay;             //                                 DONE
  
-int i = 100, overButton, directory, x, y, activeTab = 1;
+int i = 100, overButton, directory, x, y, activeTab = 1, tmp;
 int[] keysPressed;
 String dir;
 String line = "/home/maccraft123/Music/";
 //String line = "";
 File prevFile;
-int filesCount = 29;
+int filesCount = 100;
 String nowPlay;
 PFont font;
 boolean isPi = false;
@@ -41,7 +41,8 @@ void setup()
  
   font = createFont("arial", 10);
   files = listFiles(line);
- 
+  filesCount=files.length;
+  
   minim = new Minim(this);
   try
   {
@@ -52,6 +53,7 @@ void setup()
   {
     isSerial = false;
   }
+  
   gui = new ControlP5(this);
   reDraw();
   filetoplay = files[int(random(0, filesCount))];
