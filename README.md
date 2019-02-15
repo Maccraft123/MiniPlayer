@@ -14,10 +14,10 @@ Don't expect too much.
 * 2. Open all files from Processing 3 GUI
 
 # Current state:
-* 90% functions of normal audio players aren't here
+* 50% functions of normal audio players aren't here
 * Commits are welcome
 
 # TODO:
 * Functions of normal audio player
 
-WILL EAT YOUR CAT
+MIGHT EAT YOUR CAT
