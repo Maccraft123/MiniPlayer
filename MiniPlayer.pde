@@ -77,6 +77,13 @@ void draw()
   }
   if (player.position()+10 >= player.length())
    Next();
- 
+  
+
+  if (int(Sleng.getValue()/5) != int(map(player.position(), 0, player.length(), 1, 100)/5))
+  {
+    Stop();
+    player.play(int(map(Sleng.getValue(), 0, 100, 0, player.length())));
+  }
+    
   Sleng.setValue(map(player.position(), 0, player.length(), 1, 100));
 }

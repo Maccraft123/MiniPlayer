@@ -7,11 +7,11 @@ void reDraw()
     .setLabel("Player")
      .setId(1);
      
-   gui.getTab("Arduino")
+  gui.getTab("Arduino")
    .activateEvent(true)
     .setId(2);
    
-   gui.getTab("Files")
+  gui.getTab("Files")
    .activateEvent(true)
     .setId(3);
    
