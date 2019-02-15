@@ -7,11 +7,11 @@ void reDraw()
     .setLabel("Player")
      .setId(1);
      
-  gui.getTab("Arduino")
-   .activateEvent(true)
-    .setId(2);
+  //gui.getTab("Arduino")
+  // .activateEvent(true)
+  //  .setId(2);
    
-  gui.getTab("Files")
+  gui.getTab("Options")
    .activateEvent(true)
     .setId(3);
    
@@ -39,15 +39,15 @@ void reDraw()
      .setWidth(50)
       .setFont(font);
      
-  BAactive = new Button(gui, "IsSerial")
+  /*BAactive = new Button(gui, "IsSerial")
    .setPosition(150, 50)
     .setLabel("Serial Port Enabled?")
      .moveTo("Arduino")
-      .setFont(font);
+      .setFont(font);*/
      
   BFgetFolder = new Button(gui, "Directory")
    .setPosition(150, 50)
-     .moveTo("Files")
+     .moveTo("Options")
       .setFont(font);
      
   BVisu = new Button(gui, "LowCPUMode")
@@ -57,6 +57,7 @@ void reDraw()
       .moveTo("default")
        .setLabelVisible(true)
         .setFont(font);
+  
      
   Sleng = new Slider(gui, "Rewind")
    .setPosition(0, height-20)
