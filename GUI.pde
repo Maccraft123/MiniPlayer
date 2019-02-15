@@ -50,7 +50,7 @@ void reDraw()
      .moveTo("Files")
       .setFont(font);
      
-  BVisu = new Button(gui, "GameMode")
+  BVisu = new Button(gui, "LowCPUMode")
    .setPosition(147, 16)
     .setHeight(24)
      .setWidth(100)

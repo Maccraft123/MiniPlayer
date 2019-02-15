@@ -11,6 +11,7 @@ void NextFile(int a)
   player.mute();
   player = minim.loadFile(filetoplay.getAbsolutePath());
   player.play();
+  isPlaying = true;
 }
 
 void Next()
