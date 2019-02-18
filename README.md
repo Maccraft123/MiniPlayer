@@ -16,7 +16,4 @@ Low CPU usage, high RAM usage
 * Basic functions of normal audio players are here
 * Commits are welcome
 
-# TODO:
-* Functions of normal audio player
-
 MIGHT EAT YOUR CAT
