@@ -10,12 +10,13 @@ Button BPnext;               //Button for Next File
 Button BBack;                //           Previous File
 Button BPcont;               //           Continue Playing      DONE
 Button BMexit;               //           Exit                  DONE
-Button BAactive;             //           Is Serial port?       WIP
-Button BFgetFolder;          //           Getting Dir to play   WIP
-Button BVisu;                //Toggle For Visualization         DOING
-Slider Sleng;                //                                 WIP
+Button BAactive;             //           Is Serial port?       TODO
+Button BFgetFolder;          //           Getting Dir to play   DONE(mostly)
+Button BVisu;                //Toggle For Visualization         TODO
+Slider Sleng;                //                                 DONE
+Slider Svolu;                //                                 WIP
 AudioPlayer player;          //                                 DONE
-File[] files;                //                                 WIP(Counting WIP, other DONE)
+File[] files;                //                                 DONE
 File filetoplay;             //                                 DONE
  
 int i = 100, overButton, directory, x, y, activeTab = 1, tmp;
@@ -26,9 +27,9 @@ File prevFile;
 int filesCount = 100;
 String nowPlay;
 PFont font;
-boolean isPi = false;
+//boolean isPi = false;
 boolean isSerial = false;
-boolean isPhone = false;
+//boolean isPhone = false;
 boolean isPlaying = true;
 boolean selected = false;
 PrintWriter output;
@@ -56,11 +57,14 @@ void setup()
     BufferedReader reader = createReader("settings.conf");
     if (reader.readLine().equals("config"))
       dir = reader.readLine();
+    print("No error here");
+    selected = true;
   }
   catch (Exception e)
   {
     selectFolder("Please select folder with music", "Folder");
-  }
+    selected = true;
+  }  
 
   while (!selected) delay(1000);
   minim = new Minim(this);
@@ -72,6 +76,7 @@ void setup()
 void init()
 {
   files = listFiles(dir);
+  print("still no error");
   filesCount=files.length;
   filetoplay = files[int(random(0, filesCount))];
   println("PLAYING: ", filetoplay.getName());
@@ -96,7 +101,10 @@ void draw()
   if (player.position()+10 >= player.length())
    Next();
   
-  if (mousePressed)
+  if (player.getGain() != Svolu.getValue())
+    player.setGain(Svolu.getValue());
+  
+  if (mousePressed && mouseY > 180)
   {
     if (int(Sleng.getValue()) != int(map(player.position(), 0, player.length(), 1, 100)))
     {
