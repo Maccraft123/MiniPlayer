@@ -63,6 +63,11 @@ void reDraw()
    .setPosition(0, height-20)
     .setSize(width, 20)
      .setRange(1, 100);
+  
+  Svolu = new Slider(gui, "Volume")
+    .setPosition(247, 0)
+      .setSize(100, 24)
+        .setRange(-20,0);
  
 }
 
