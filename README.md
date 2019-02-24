@@ -2,7 +2,10 @@
 Minim-based music player, beta stage
 Low CPU usage, high RAM usage
 
-# Depedencies
+# Run Depedencies
+* Java 8
+
+# Build Depedencies
 * Minim
 * ControlP5
 * Java 8
